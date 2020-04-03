@@ -2,23 +2,44 @@
 <html>
    <head>
       <style>
+      
          *{
             color:white;
             text-align:center;
+            font-family:cursive;
          }
+         
          body {
-              background-image: url('https://news.bitcoin.com/wp-content/uploads/2020/03/algorithmic-760x512.png');<!-option1->
-              background-image: linear-gradient(to bottom right, blue, black);<!-option2->
+         background-image: url('https://cdn.pixabay.com/photo/2016/11/10/05/09/bitcoin-1813503_960_720.jpg');
+            
               height:800px;
                }
          input[type=submit] {
                             background-color: #555555;
                             color: white;
+                            font-size:20px;
                              }
+                             p{
+                             font-size:40px;
+                             }
+         .center {
+				display: flex;
+  				justify-content: center;
+  				align-items: center;
+ 				height: 500px;
+ 
+				}
+				h1{
+				font-size:80px;
+				}
+				option{
+				       background-color:black;
+				}
       </style>
    </head>
    <body>
       <h1>CRYPTO-VIZ</h1>
+      <div class="center">
       <form action = "http://localhost:5000/predict" method = "POST">
          <p>
             <label for="crypto">Cryptocurrency</label>
@@ -34,5 +55,6 @@
 
          <p><input type = "submit" value = "Predict" /></p>
       </form>
+      </div>
    </body>
 </html>
