@@ -1,9 +1,34 @@
+<!DOCTYPE html>
 <html>
+   <head>
+      <style>
+         *{
+            color:white;
+            text-align:center;
+         }
+         body {
+              background-image: url('https://news.bitcoin.com/wp-content/uploads/2020/03/algorithmic-760x512.png');
+               }
+         input[type=submit] {
+                            background-color: #555555;
+                            color: white;
+                             }
+      </style>
+   </head>
    <body>
+      <h1>CRYPTO-VIZ</h1>
       <form action = "http://localhost:5000/predict" method = "POST">
-         <p>Cryptocurrency <input name = "crypto" /></p>
-         <p>Start date <input  name = "start" /></p>
-         <p>End date <input  name = "end" /></p>
+         <p>
+            <label for="crypto">Cryptocurrency</label>
+               <select name="crypto" id="crypto">
+                   <option value="BTC">BTC</option>
+                   <option value="ETH">ETH</option>
+                   <option value="LTC">LTC</option>
+                   <option value="BCHUSDT">BCHUSDT</option>
+               </select>
+         </p>
+         <p>Start date <input  type="date" name = "start" placeholder="yyyy-mm-dd"/></p>
+         <p>End date <input  type="date" name = "end" placeholder="yyyy-mm-dd" /></p>
 
          <p><input type = "submit" value = "Predict" /></p>
       </form>
