@@ -1,0 +1,1 @@
+The HTML files to be rendered are by default looked for in /templates folder by flask.
