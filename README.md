@@ -1,5 +1,5 @@
 # crypto-viz
-Prediction of cryptocurrency prices using LSTM.
+Cryptocurrency price prediction using LSTM with flask webapp deployment.
 
 ## Requirements
 * binance api
