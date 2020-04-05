@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from flask import Flask, render_template, request
 from cryptoviz.util import data_extract, plot_graph
-from cryptoviz import flaskapp, eth_model #,btc_model, ltc_model, xrp_model
+from cryptoviz import flaskapp, eth_model ,btc_model, ltc_model, xrp_model
 
 # method to predict cryptocurrency price and render the plot on home/predict
 @flaskapp.route('/predict', methods=['POST', 'GET'])
