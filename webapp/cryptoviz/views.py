@@ -11,7 +11,7 @@ def predict():
         crypto = request.form.get('crypto')
         start = request.form.get('start')
         end = request.form.get('end')
-        print(end)
+        #print(crypto,end,end)
 
         if crypto == "bitcoin":
             sym  = "BTCUSDT"
