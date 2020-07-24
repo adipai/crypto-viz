@@ -43,6 +43,15 @@ def predict():
         # Perform predictions on test data
         if crypto == "bitcoin":
             predicted_price = btc_model.predict(X_test)
+            '''
+            # automation for continous forecasting(algorithm)-needs to be done for each crypto option
+            # the input here is just one price, i.e, the price of the current timestamp/current instant
+            # no. of timestamps is the time into the future for which the forecast is to be done
+            predicted_price = []
+            loop until required no. of timestamps
+                price = model.predict(seed value)
+                predicted_price.append(price)
+            '''
         elif crypto == "ethereum":
             predicted_price = eth_model.predict(X_test)
         elif crypto == "ripple":

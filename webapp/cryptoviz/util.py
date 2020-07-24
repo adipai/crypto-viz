@@ -9,15 +9,15 @@ from binance.client import Client
 def data_extract(sym, start, end):
     client = Client('API_KEY', 'SECRET_KEY')
     if end =="":
-        CRYPTOCURRENCY = client.get_historical_klines(symbol=sym, interval=Client.KLINE_INTERVAL_30MINUTE, start_str=start)
+        cryptocurrency = client.get_historical_klines(symbol=sym, interval=Client.KLINE_INTERVAL_30MINUTE, start_str=start)
     else:
-        CRYPTOCURRENCY = client.get_historical_klines(symbol=sym, interval=Client.KLINE_INTERVAL_30MINUTE, start_str=start, end_str=end)
+        cryptocurrency = client.get_historical_klines(symbol=sym, interval=Client.KLINE_INTERVAL_30MINUTE, start_str=start, end_str=end)
 
-    CRYPTOCURRENCY = pd.DataFrame(CRYPTOCURRENCY, columns=['Open time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close time', 'Quote asset volume', 'Number of trades', 'Taker buy base asset volume', 'Taker buy quote asset volume', 'Ignore'])
-    CRYPTOCURRENCY['Open time'] = pd.to_datetime(CRYPTOCURRENCY['Open time'], unit='ms')
-    CRYPTOCURRENCY.set_index('Open time', inplace=True)
+    cryptocurrency = pd.DataFrame(cryptocurrency, columns=['Open time', 'Open', 'High', 'Low', 'Close', 'Volume', 'Close time', 'Quote asset volume', 'Number of trades', 'Taker buy base asset volume', 'Taker buy quote asset volume', 'Ignore'])
+    cryptocurrency['Open time'] = pd.to_datetime(cryptocurrency['Open time'], unit='ms')
+    cryptocurrency.set_index('Open time', inplace=True)
     #print(CRYPTOCURRENCY.head())
-    return CRYPTOCURRENCY.iloc[:,3:4].astype(float).values
+    return cryptocurrency.iloc[:,3:4].astype(float).values
 
 def plot_graph(crypto, predicted_price, real_price):
     img = io.BytesIO()
