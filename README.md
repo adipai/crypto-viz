@@ -1,6 +1,8 @@
 # crypto-viz
 A scalable flask webapp to forecast cryptocurrency prices. The forecasting model is built using stacked LSTM for one-to-one sequence 
-of the timeseries. 
+of the timeseries.
+
+Model performance:
 | Cryptocurrency | Mean squared error |
 |----------------|--------------------|                  
 |BTC| 1.4925e<sup>-04</sup>|
